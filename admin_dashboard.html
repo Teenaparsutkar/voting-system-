@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+        }
+
+        /* Header */
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        /* Section title */
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            color: #2c3e50;
+        }
+
+        /* Table styling */
+        table {
+            width: 95%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #34495e;
+            color: white;
+            padding: 12px;
+            font-size: 18px;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        /* Footer links */
+        .footer-links {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 18px;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            padding: 8px 16px;
+            background: #2c3e50;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .footer-links a:hover {
+            background: #1a252f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Admin Dashboard</div>
+
+    <!-- TOTAL VOTES -->
+    <p><strong>Total Votes:</strong> {{ total_votes }}</p>
+
+    <!-- VOTE COUNTS -->
+    <h2>Vote Counts</h2>
+    <table>
+        <tr>
+            <th>Party</th>
+            <th>Votes</th>
+        </tr>
+        {% for party, count in vote_counts.items() %}
+        <tr>
+            <td>{{ party }}</td>
+            <td>{{ count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- REGISTERED USERS -->
+    <h2>Registered Users</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Aadhar</th>
+            <th>Voted</th>
+        </tr>
+        {% for u in users %}
+        <tr>
+            <td>{{ u.name }}</td>
+            <td>{{ u.aadhar }}</td>
+            <td>{{ u.voted }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- FRAUD LOGS -->
+    <h2>Fraud Logs (Recent)</h2>
+    <table>
+        <tr>
+            <th>Aadhar</th>
+            <th>Name</th>
+            <th>Activity</th>
+            <th>Similarity</th>
+            <th>Extra</th>
+            <th>Time</th>
+        </tr>
+        {% for f in frauds %}
+        <tr>
+            <td>{{ f.aadhar }}</td>
+            <td>{{ f.name }}</td>
+            <td>{{ f.activity }}</td>
+            <td>{{ f.similarity }}</td>
+            <td>{{ f.extra }}</td>
+            <td>{{ f.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="footer-links">
+        <a href="{{ url_for('admin_frauds') }}">All Frauds</a>
+        <a href="{{ url_for('admin_users') }}">All Users</a>
+        <a href="{{ url_for('admin_logout') }}">Logout</a>
+    </div>
+
+</body>
+</html>

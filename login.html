@@ -1,0 +1,131 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Online Voting</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f4f7fb;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #fff;
+            padding: 40px 50px;
+            width: 420px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 15px;
+            color: #444;
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 18px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0px 0px 5px rgba(0,123,255,0.3);
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #0056b3;
+            transform: scale(1.03);
+        }
+
+        .flash {
+            color: red;
+            background: #ffe5e5;
+            padding: 10px;
+            border-left: 4px solid red;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 15px;
+            color: #007bff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>User Login</h2>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash">
+                {% for msg in messages %}
+                    <p>{{ msg }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <label>Aadhar Number:</label>
+        <input type="text" name="aadhar" required>
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <a href="{{ url_for('home') }}">← Back to Home</a>
+</div>
+
+</body>
+</html>

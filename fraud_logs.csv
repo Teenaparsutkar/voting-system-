@@ -1,0 +1,18 @@
+aadhar,name,activity,similarity,extra,timestamp
+123456789012,Teena,Low-texture spoof suspicion on verification,0.902299,lap_var=75.21694936258625,2025-12-03T22:45:06.340883
+123456789012,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-03T22:45:06.364174
+123456789012,Teena,Low-texture spoof suspicion on verification,0.892305,lap_var=59.69478296288816,2025-12-03T22:45:24.220708
+123456789012,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-03T22:45:24.233545
+123456789012,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-03T22:47:13.249230
+123456789012,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-03T22:48:22.279393
+123456789012,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-03T22:52:13.766093
+123456789012,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-04T12:19:14.263558
+123456789012,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-04T12:19:58.424622
+123456789012,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-04T12:30:43.571118
+23456789,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-04T12:52:34.895391
+23456789,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-04T13:08:05.857924
+123456789012,Teena,Low-texture spoof suspicion on verification,0.794367,lap_var=75.14355227902549,2025-12-05T20:16:52.433672
+123456789012,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-05T20:16:52.453094
+23456789,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-05T20:26:03.915627
+123456789012,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-06T10:22:42.978476
+123456789012,Teena,Duplicate vote attempt,,tried to access /vote,2025-12-06T11:22:47.874826

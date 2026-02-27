@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head><title>Users</title></head>
+<body>
+  <h1>Registered Users</h1>
+  <table border="1">
+    <tr><th>Name</th><th>Aadhar</th><th>Voted</th><th>Embedding</th></tr>
+    {% for u in users %}
+    <tr>
+      <td>{{ u.name }}</td>
+      <td>{{ u.aadhar }}</td>
+      <td>{{ u.voted }}</td>
+      <td>{{ u.embedding_pkl }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p><a href="{{ url_for('admin_dashboard') }}">Back</a></p>
+</body>
+</html>

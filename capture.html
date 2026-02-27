@@ -1,0 +1,106 @@
+<!-- templates/capture.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capture Face - Online Voting</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px 40px;
+            width: 450px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background: #007bff;
+            border: none;
+            padding: 12px 25px;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 80%;
+            transition: 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #0056b3;
+            transform: scale(1.03);
+        }
+
+        .flash-msg {
+            color: green;
+            background: #e8ffe8;
+            padding: 10px;
+            border-left: 4px solid green;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 15px;
+            transition: 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Capture Face Images for {{ name }}</h2>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-msg">
+                {% for msg in messages %}
+                    <p>{{ msg }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <p>Click the button below to start capturing face images using your webcam.</p>
+        <button type="submit">Start Capturing</button>
+    </form>
+
+    <a href="{{ url_for('home') }}">← Back to Home</a>
+</div>
+
+</body>
+</html>

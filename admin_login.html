@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #1e293b;
+            font-size: 26px;
+        }
+
+        label {
+            float: left;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #334155;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            background: #f8fafc;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: #fff;
+        }
+
+        .btn {
+            width: 100%;
+            background: #2563eb;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 17px;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Admin Login</h2>
+
+        <form method="POST">
+
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <a href="{{ url_for('home') }}" class="back-link">← Back to Home</a>
+    </div>
+
+</body>
+</html>
